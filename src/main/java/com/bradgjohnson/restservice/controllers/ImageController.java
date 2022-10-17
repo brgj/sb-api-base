@@ -19,4 +19,9 @@ public class ImageController {
     public List<LImg> GetImages(@RequestBody ImageRequest imageRequest) {
         return imageService.getImages(imageRequest.urls);
     }
+
+    @GetMapping
+    public String GetHello() {
+        return "Hello World";
+    }
 }
