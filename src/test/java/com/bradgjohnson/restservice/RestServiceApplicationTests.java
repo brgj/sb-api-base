@@ -1,4 +1,4 @@
-package test.java.com.example.restservice;
+package com.bradgjohnson.restservice;
 
 import org.junit.jupiter.api.Test;
 

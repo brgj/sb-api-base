@@ -1,4 +1,4 @@
-package main.java.com.example.restservice.cache;
+package com.bradgjohnson.restservice.cache;
 
 public class CacheElement<K, V> {
     private K key;

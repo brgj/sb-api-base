@@ -1,6 +1,6 @@
-package main.java.com.example.restservice.repositories;
+package com.bradgjohnson.restservice.repositories;
 
-import com.example.restservice.models.LImg;
+import com.bradgjohnson.restservice.models.LImg;
 
 import java.util.List;
 

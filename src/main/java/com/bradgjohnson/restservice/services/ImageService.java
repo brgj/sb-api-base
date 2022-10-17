@@ -1,7 +1,7 @@
-package main.java.com.example.restservice.services;
+package com.bradgjohnson.restservice.services;
 
-import com.example.restservice.models.LImg;
-import com.example.restservice.repositories.ImageRepository;
+import com.bradgjohnson.restservice.models.LImg;
+import com.bradgjohnson.restservice.repositories.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

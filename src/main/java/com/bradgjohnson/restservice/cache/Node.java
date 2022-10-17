@@ -1,4 +1,4 @@
-package main.java.com.example.restservice.cache;
+package com.bradgjohnson.restservice.cache;
 
 public class Node<T> {
     public T value;

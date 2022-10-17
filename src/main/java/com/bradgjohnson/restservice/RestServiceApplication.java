@@ -1,4 +1,4 @@
-package main.java.com.example.restservice;
+package com.bradgjohnson.restservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

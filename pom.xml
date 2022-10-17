@@ -8,13 +8,13 @@
 		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.bradgjohnson</groupId>
 	<artifactId>sb-api-base</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sb-api-base</name>
 	<description>Spring Boot API Base</description>
 	<properties>
-		<java.version>1.18</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

@@ -1,8 +1,8 @@
-package main.java.com.example.restservice.controllers;
+package com.bradgjohnson.restservice.controllers;
 
-import com.example.restservice.models.ImageRequest;
-import com.example.restservice.models.LImg;
-import com.example.restservice.services.ImageService;
+import com.bradgjohnson.restservice.models.ImageRequest;
+import com.bradgjohnson.restservice.models.LImg;
+import com.bradgjohnson.restservice.services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

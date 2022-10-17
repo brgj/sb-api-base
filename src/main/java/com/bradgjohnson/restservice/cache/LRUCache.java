@@ -1,4 +1,4 @@
-package main.java.com.example.restservice.cache;
+package com.bradgjohnson.restservice.cache;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

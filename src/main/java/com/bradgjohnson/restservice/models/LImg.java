@@ -1,6 +1,6 @@
-package main.java.com.example.restservice.models;
+package com.bradgjohnson.restservice.models;
 
-import com.example.restservice.cache.ItemWithSize;
+import com.bradgjohnson.restservice.cache.ItemWithSize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LImg implements ItemWithSize {

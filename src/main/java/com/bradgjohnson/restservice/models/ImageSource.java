@@ -1,4 +1,4 @@
-package main.java.com.example.restservice.models;
+package com.bradgjohnson.restservice.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
