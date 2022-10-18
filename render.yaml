@@ -35,7 +35,6 @@ services:
     plan: free
     branch: master
     rootDir: mongo
-    dockerFilePath: ./6.0/Dockerfile
     dockerContext: ./6.0/
     numInstances: 1
     envVars:
