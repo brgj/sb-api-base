@@ -14,7 +14,7 @@
 	<name>sb-api-base</name>
 	<description>Spring Boot API Base</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.11</java.version>
 		<build.dir>release</build.dir>
 	</properties>
 	<dependencies>
@@ -63,8 +63,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>10</source>
-					<target>10</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
