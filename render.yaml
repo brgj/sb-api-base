@@ -15,6 +15,11 @@ services:
           type: web
           name: mongodb
           property: host
+      - key: MONGODB_PORT
+        fromService:
+          type: web
+          name: mongodb
+          property: port
       - key: MONGODB_PASSWORD
         fromService:
           type: web

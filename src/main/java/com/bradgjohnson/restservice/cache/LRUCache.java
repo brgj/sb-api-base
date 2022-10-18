@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class LRUCache<K, V extends ItemWithSize> {
+public class LRUCache<K, V> {
     private final long maxSize;
     private final AtomicLong currentSize;
     private final Map<K, Node<CacheElement<K,V>>> cache;
@@ -45,12 +45,7 @@ public class LRUCache<K, V extends ItemWithSize> {
     }
 
     public boolean put(K key, V value) {
-        while (cacheTooFullFor(value)) {
-            if (currentSize.get() == 0) {
-                // Item is too big for cache
-                System.err.println("Item is too big for cache: " + value + "/" + maxSize);
-                return false;
-            }
+        if (this.currentSize.get() >= this.maxSize) {
             removeLRUItem();
         }
 
@@ -58,12 +53,12 @@ public class LRUCache<K, V extends ItemWithSize> {
         return true;
     }
 
-    private boolean cacheTooFullFor(V value) {
-        return (this.currentSize.get() + value.getSizeBytes()) > this.maxSize;
+    public void remove(K key) {
+        cache.remove(key);
+        this.currentSize.addAndGet(-1);
     }
 
     private void removeLRUItem() {
-
         if (lruRoot == null) {
             this.currentSize.set(0);
             this.mruTail = null;
@@ -80,8 +75,7 @@ public class LRUCache<K, V extends ItemWithSize> {
             this.lruRoot.prev = null;
         }
 
-        cache.remove(item.getKey());
-        this.currentSize.addAndGet(-item.getValue().getSizeBytes());
+        remove(item.getKey());
     }
 
     private void putItem(CacheElement<K, V> item) {
@@ -96,7 +90,7 @@ public class LRUCache<K, V extends ItemWithSize> {
             this.mruTail.value = item;
         }
         cache.put(item.getKey(), this.mruTail);
-        this.currentSize.addAndGet(item.getValue().getSizeBytes());
+        this.currentSize.addAndGet(1);
     }
 
     public String toString() {
@@ -124,7 +118,7 @@ public class LRUCache<K, V extends ItemWithSize> {
         }
         sb.append("\n]");
         sb.append("\nMap->[");
-        cache.values().forEach(ce -> sb.append("\n").append(ce.value.getKey()).append(" : ").append(ce.value.getValue().getSizeBytes()));
+        cache.values().forEach(ce -> sb.append("\n").append(ce.value.getKey()));
         sb.append("\n]");
 
         return sb.toString();
