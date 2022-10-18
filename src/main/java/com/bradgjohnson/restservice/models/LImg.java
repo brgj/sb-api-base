@@ -2,7 +2,9 @@ package com.bradgjohnson.restservice.models;
 
 import com.bradgjohnson.restservice.cache.ItemWithSize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
+@Builder
 public class LImg implements ItemWithSize {
     private final String url;
     private final ImageSource source;
@@ -27,34 +29,5 @@ public class LImg implements ItemWithSize {
     @JsonProperty("SizeInBytes")
     public Integer getSizeBytes() {
         return sizeBytes;
-    }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder {
-        private String url;
-        private ImageSource source;
-        private Integer sizeBytes;
-
-        public Builder url(String url) {
-            this.url = url;
-            return this;
-        }
-
-        public Builder source(ImageSource source) {
-            this.source = source;
-            return this;
-        }
-
-        public Builder sizeBytes(Integer sizeBytes) {
-            this.sizeBytes = sizeBytes;
-            return this;
-        }
-
-        public LImg build() {
-            return new LImg(url, source, sizeBytes);
-        }
     }
 }

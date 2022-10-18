@@ -6,6 +6,9 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "master" ]
+  paths:
+    - "!db/**"
+    - "!.gitignore"
 
 jobs:
   build:
