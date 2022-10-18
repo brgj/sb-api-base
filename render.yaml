@@ -24,9 +24,6 @@ services:
           envVarKey: MONGO_INITDB_ROOT_PASSWORD
       - key: PORT
         value: 443
-    buildFilter:
-      paths:
-        - release/**/*.jar
   # A private Docker service for mongodb
   - type: web
     name: mongodb
@@ -42,6 +39,3 @@ services:
         generateValue: true
       - key: MONGO_INITDB_ROOT_USERNAME
         value: root
-    buildFilter:
-      paths:
-        - release/**/*.jar
