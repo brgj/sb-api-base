@@ -34,8 +34,7 @@ services:
     region: oregon
     plan: free
     branch: master
-    rootDir: mongo/6.0
-    dockerCommand: ./docker-entrypoint.sh
+    rootDir: mongo-symlink/mongo/6.0
     numInstances: 1
     envVars:
       - key: MONGO_INITDB_ROOT_PASSWORD
