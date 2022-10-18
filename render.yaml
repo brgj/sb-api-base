@@ -7,7 +7,7 @@ services:
     region: oregon
     plan: free
     branch: master
-    rootDir: /
+    rootDir: ./
     numInstances: 1
     healthCheckPath: /
     envVars:
@@ -34,10 +34,9 @@ services:
     region: oregon
     plan: free
     branch: master
-    rootDir: /
+    rootDir: ./
     dockerCommand: ./docker-entrypoint.sh
     numInstances: 1
-    healthCheckPath: /
     envVars:
       - key: MONGO_INITDB_ROOT_PASSWORD
         generateValue: true
@@ -45,7 +44,7 @@ services:
         value: root
     buildFilter:
       ignoredPaths:
-        - /**
+        - ./**
     disk:
       name: data
       mountPath: /data/db
