@@ -30,11 +30,11 @@ services:
   - type: web
     name: mongodb
     env: docker
-    repo: https://github.com/docker-library/mongo.git
+    repo: https://github.com/brgj/mongo-symlink.git
     region: oregon
     plan: free
     branch: master
-    rootDir: ./
+    rootDir: mongo
     dockerCommand: ./docker-entrypoint.sh
     numInstances: 1
     envVars:
