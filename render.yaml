@@ -16,10 +16,7 @@ services:
           name: mongodb
           property: host
       - key: MONGODB_PORT
-        fromService:
-          type: web
-          name: mongodb
-          property: port
+        value: 27017
       - key: MONGODB_PASSWORD
         fromService:
           type: web
