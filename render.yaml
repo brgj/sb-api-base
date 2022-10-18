@@ -34,8 +34,7 @@ services:
     region: oregon
     plan: free
     branch: master
-    rootDir: mongo
-    dockerContext: ./6.0/
+    rootDir: 6.0/
     numInstances: 1
     envVars:
       - key: MONGO_INITDB_ROOT_PASSWORD
