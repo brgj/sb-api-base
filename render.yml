@@ -1,0 +1,53 @@
+services:
+  # A Docker service for the Spring Boot REST API
+  - type: web
+    name: sb-api-base
+    env: docker
+    repo: https://github.com/brgj/sb-api-base.git
+    region: oregon
+    plan: free
+    branch: master
+    rootDir: /
+    numInstances: 1
+    healthCheckPath: /
+    envVars:
+      - key: MONGODB_HOST
+        fromService:
+          type: pserv
+          name: mongodb
+          property: host
+      - key: MONGODB_PASSWORD
+        fromService:
+          type: pserv
+          name: mongodb
+          envVarKey: MONGO_INITDB_ROOT_PASSWORD
+      - key: PORT
+        value: 443
+    buildFilter:
+      paths:
+        - release/**/*.jar
+  # A private Docker service for mongodb
+  - type: pserv
+    name: mongodb
+    env: docker
+    repo: https://github.com/docker-library/mongo.git
+    region: oregon
+    plan: free
+    branch: master
+    rootDir: /
+    dockerCommand: ./docker-entrypoint.sh
+    numInstances: 1
+    healthCheckPath: /
+    envVars:
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        generateValue: true
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: root
+    buildFilter:
+      ignoredPaths:
+        - /**
+    ipAllowList: []
+    disk:
+      name: data
+      mountPath: /data/db
+      sizeGB: 10
