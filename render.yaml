@@ -45,7 +45,3 @@ services:
     buildFilter:
       ignoredPaths:
         - ./**
-    disk:
-      name: data
-      mountPath: /data/db
-      sizeGB: 10
