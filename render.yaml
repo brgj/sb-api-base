@@ -4,7 +4,7 @@ services:
     name: sb-api-base
     env: docker
     repo: https://github.com/brgj/sb-api-base.git
-    region: ohio
+    region: oregon
     plan: free
     branch: master
     rootDir: ./
@@ -32,7 +32,7 @@ services:
     name: mongodb
     env: docker
     repo: https://github.com/brgj/mongo-symlink.git
-    region: ohio
+    region: oregon
     plan: free
     branch: master
     rootDir: 6.0/
