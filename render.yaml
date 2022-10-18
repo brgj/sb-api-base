@@ -45,7 +45,6 @@ services:
     buildFilter:
       ignoredPaths:
         - ./**
-    ipAllowList: [ ]
     disk:
       name: data
       mountPath: /data/db
