@@ -9,7 +9,6 @@ services:
     branch: master
     rootDir: ./
     numInstances: 1
-    healthCheckPath: /
     envVars:
       - key: MONGODB_HOST
         fromService:
